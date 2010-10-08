@@ -1,0 +1,9 @@
+PathFinder.Test/bin*
+PathFinder.Test/obj*
+PathFinder/bin*
+PathFinder/obj*
+*.gpState
+*.Cache
+*.suo
+*.user
+*_ReSharper*
