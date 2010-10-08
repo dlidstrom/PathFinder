@@ -69,10 +69,10 @@ namespace PathFinder
          var closedSet = new HashSet<Point>();
 
          // the g-score is the distance from start point to the current point
-         var gScore = new Dictionary<Point, int> {{startPoint, 0}};
+         var gScore = new Dictionary<Point, double> {{startPoint, 0}};
 
          // the f-score is the g-score plus heuristic
-         var fScore = new Dictionary<Point, int> {{startPoint, Utils.Distance(startPoint, this.EndPoint)}};
+         var fScore = new Dictionary<Point, double> {{startPoint, Utils.Distance(startPoint, this.EndPoint)}};
 
          // cameFrom is used to reconstruct path when target is found
          var cameFrom = new Dictionary<Point, Point>();
@@ -104,7 +104,7 @@ namespace PathFinder
                }
 
                // total cost from start
-               int tentativeGScore = gScore[x] + 1;
+               var tentativeGScore = gScore[x] + Utils.Distance(x, y);
 
                bool tentativeIsBetter;
                Point point = y;
@@ -131,7 +131,7 @@ namespace PathFinder
                   cameFrom[y] = x;
                   gScore[y] = tentativeGScore;
                   fScore[y] = gScore[y] + Utils.Distance(y, this.EndPoint);
-                  int heuristic = fScore[y];
+                  var heuristic = fScore[y];
 
                   // set priority of y
                   if (handle == null)

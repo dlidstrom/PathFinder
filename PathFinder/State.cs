@@ -17,7 +17,7 @@ namespace PathFinder
       /// <summary>
       /// Gets or sets the heuristic value.
       /// </summary>
-      public int Heuristic
+      public double Heuristic
       {
          get;
          set;

@@ -59,7 +59,7 @@ namespace PathFinder
       {
          this.EndPoint = endPoint;
          this.Comparer = new DistanceComparer(this.EndPoint);
-         int costLimit = Utils.Distance(startPoint, endPoint);
+         var costLimit = Utils.Distance(startPoint, endPoint);
 
          while (true)
          {
@@ -116,9 +116,9 @@ namespace PathFinder
       /// <param name="costLimit">Limit to the cost</param>
       /// <param name="pathSoFar">Path found so far</param>
       /// <returns>Solution with path or a null path if no solution found</returns>
-      private Solution DFS(int startCost, Point node, int costLimit, Stack<Point> pathSoFar)
+      private Solution DFS(double startCost, Point node, double costLimit, Stack<Point> pathSoFar)
       {
-         int minimumCost = startCost + Utils.Distance(node, this.EndPoint);
+         var minimumCost = startCost + Utils.Distance(node, this.EndPoint);
          if (minimumCost > costLimit)
          {
             return new Solution {CostLimit = minimumCost, Path = null};
@@ -129,11 +129,11 @@ namespace PathFinder
             return new Solution {CostLimit = costLimit, Path = new Stack<Point>(pathSoFar.ToArray())};
          }
 
-         int nextCostLimit = int.MaxValue;
+         var nextCostLimit = double.MaxValue;
          var successors = this.GetNeighbours(node);
          foreach (var succNode in successors)
          {
-            int newStartCost = startCost + 1;
+            var newStartCost = startCost + 1;
             pathSoFar.Push(succNode);
             this.Visited.Add(succNode);
             var solution = this.DFS(newStartCost, succNode, costLimit, pathSoFar);
@@ -183,7 +183,7 @@ namespace PathFinder
          /// <summary>
          /// Gets or sets the cost limit.
          /// </summary>
-         public int CostLimit
+         public double CostLimit
          {
             get;
             set;
