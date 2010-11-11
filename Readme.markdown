@@ -6,7 +6,7 @@ cross any of the previous lines.
 
 # Screenshot
 
-![Sample](http://github.com/dlidstrom/PathFinder/raw/master/shot.png)
+See shot.PNG in the repository.
 
 # Implementation
 
@@ -15,4 +15,4 @@ because it has a nice priority queue. Tests of the algorithm itself have been ma
 using [NUnit](http://www.nunit.org/). You'll need Visual Studio 2010, although Express
 will do.
 
-Copyright 2010 Daniel Lidström
+Copyright 2010 Daniel LidstrÃ¶m
