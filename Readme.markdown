@@ -6,7 +6,7 @@ cross any of the previous lines.
 
 # Screenshot
 
-![Sample](shot.PNG)
+![Sample](http://github.com/dlidstrom/PathFinder/raw/master/shot.png)
 
 # Implementation
 
