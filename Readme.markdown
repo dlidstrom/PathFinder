@@ -6,7 +6,7 @@ cross any of the previous lines.
 
 # Screenshot
 
-See shot.PNG in the repository.
+<img src="http://github.com/dlidstrom/PathFinder/blob/master/shot.PNG">
 
 # Implementation
 
