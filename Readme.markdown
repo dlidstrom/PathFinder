@@ -6,7 +6,7 @@ cross any of the previous lines.
 
 # Screenshot
 
-<img src="http://dlidstrom.github.com/PathFinder/shot.PNG">
+![screenshot](shot.PNG)
 
 # Implementation
 
