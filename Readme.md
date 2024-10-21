@@ -1,5 +1,9 @@
 # Introduction
 
+🔥 Latest news
+
+- fixed A* inner loop performance (thanks [amitp](https://www.redblobgames.com/pathfinding/a-star/implementation.html)!)
+
 This is an implementation of the
 [A*](http://en.wikipedia.org/wiki/A*_search_algorithm) search algorithm. Click
 twice in the program window and the points will be connected with a line that
