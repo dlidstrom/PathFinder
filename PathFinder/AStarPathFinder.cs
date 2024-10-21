@@ -109,7 +109,7 @@ namespace PathFinder
                bool tentativeIsBetter;
                Point point = y;
                handle = null;
-               if (!openSet.Exists(s => s.Point == point) && !closedSet.Contains(y))
+               if (!handles.ContainsKey(point) && !closedSet.Contains(y))
                {
                   // will get priority adjusted further down
                   openSet.Add(ref handle!, new State {Point = point});
