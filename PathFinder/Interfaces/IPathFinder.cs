@@ -19,6 +19,6 @@ namespace PathFinder.Interfaces
       /// <param name="startPoint">Starting point</param>
       /// <param name="endPoint">Ending point</param>
       /// <returns>Path that connects start and end point</returns>
-      Path FindPath(Point startPoint, Point endPoint);
+      Path? FindPath(Point startPoint, Point endPoint);
    }
 }
