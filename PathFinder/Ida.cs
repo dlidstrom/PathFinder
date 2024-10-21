@@ -24,7 +24,7 @@ namespace PathFinder
       /// <summary>
       /// Compares points using distance to endpoint.
       /// </summary>
-      private IComparer<Point> Comparer;
+      private IComparer<Point>? Comparer;
 
       /// <summary>
       /// Keeps track of visited points.
@@ -55,7 +55,7 @@ namespace PathFinder
       /// <param name="startPoint">Starting point</param>
       /// <param name="endPoint">Ending point</param>
       /// <returns>Path that connects start and end point</returns>
-      public Path FindPath(Point startPoint, Point endPoint)
+      public Path? FindPath(Point startPoint, Point endPoint)
       {
          this.EndPoint = endPoint;
          this.Comparer = new DistanceComparer(this.EndPoint);
@@ -192,7 +192,7 @@ namespace PathFinder
          /// <summary>
          /// Gets or sets path.
          /// </summary>
-         public Stack<Point> Path
+         public Stack<Point>? Path
          {
             get;
             set;

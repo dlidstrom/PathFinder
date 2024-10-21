@@ -11,7 +11,7 @@ namespace PathFinder
    using Interfaces;
 
    /// <summary>
-   /// Path finder class using the A* algorithm.
+   /// Pathfinder class using the A* algorithm.
    /// </summary>
    public class AStarPathFinder : IPathFinder
    {
@@ -45,7 +45,7 @@ namespace PathFinder
       /// <param name="startPoint">Starting point</param>
       /// <param name="endPoint">Ending point</param>
       /// <returns>Path that connects start and end point</returns>
-      public Path FindPath(Point startPoint, Point endPoint)
+      public Path? FindPath(Point startPoint, Point endPoint)
       {
          if (this.Collides(startPoint) || this.Collides(endPoint))
          {
@@ -62,8 +62,8 @@ namespace PathFinder
          var handles = new Dictionary<Point, C5.IPriorityQueueHandle<State>>();
 
          // add start point to queue and associate point with handle
-         C5.IPriorityQueueHandle<State> handle = null;
-         openSet.Add(ref handle, new State {Point = startPoint, Heuristic = 0});
+         C5.IPriorityQueueHandle<State>? handle = null;
+         openSet.Add(ref handle!, new State {Point = startPoint, Heuristic = 0});
          handles.Add(this.StartPoint, handle);
 
          var closedSet = new HashSet<Point>();
@@ -80,8 +80,8 @@ namespace PathFinder
          // process nodes in the open set...
          while (!openSet.IsEmpty)
          {
-            // fetch highest priority node, i.e. the one with
-            // lowest heuristic value
+            // fetch the highest priority node, i.e. the one with
+            // the lowest heuristic value
             State minState = openSet.DeleteMin();
             Point x = minState.Point;
             handles.Remove(x);
@@ -109,10 +109,10 @@ namespace PathFinder
                bool tentativeIsBetter;
                Point point = y;
                handle = null;
-               if (!openSet.Exists(s => s.Point == point) && !closedSet.Contains(y))
+               if (!handles.ContainsKey(point) && !closedSet.Contains(y))
                {
                   // will get priority adjusted further down
-                  openSet.Add(ref handle, new State {Point = point});
+                  openSet.Add(ref handle!, new State {Point = point});
                   handles.Add(point, handle);
                   tentativeIsBetter = true;
                }

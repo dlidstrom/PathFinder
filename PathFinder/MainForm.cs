@@ -18,7 +18,7 @@ namespace PathFinder
       /// <summary>
       /// Bitmap containing paths.
       /// </summary>
-      private Bitmap Bitmap;
+      private Bitmap? Bitmap;
 
       /// <summary>
       /// Initializes a new instance of the Mainform class.
