@@ -6,8 +6,6 @@
 
 namespace PathFinder
 {
-   using System.Drawing;
-
    using Interfaces;
 
    /// <summary>
@@ -18,11 +16,11 @@ namespace PathFinder
       /// <summary>
       /// Creates an AStarPathFinder.
       /// </summary>
-      /// <param name="bitmap">Bitmap surface (world)</param>
+      /// <param name="surface">Surface (world)</param>
       /// <returns>Path finder</returns>
-      public IPathFinder CreatePathFinder(Bitmap bitmap)
+      public IPathFinder CreatePathFinder(Surface surface)
       {
-         return new AStarPathFinder(bitmap);
+         return new AStarPathFinder(surface);
       }
    }
 }

@@ -29,10 +29,10 @@ namespace PathFinder.Interfaces
       void Redraw();
 
       /// <summary>
-      /// Set drawing surface. This is a bitmap.
+      /// Set drawing surface.
       /// </summary>
-      /// <param name="bitmap">Drawing surface</param>
-      void SetDrawing(Bitmap bitmap);
+      /// <param name="surface">Drawing surface</param>
+      void SetDrawing(Surface surface);
 
       /// <summary>
       /// Display an error message.
