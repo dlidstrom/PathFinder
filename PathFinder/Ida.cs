@@ -19,7 +19,7 @@ namespace PathFinder
       /// <summary>
       /// Surface where paths are being located.
       /// </summary>
-      private readonly Bitmap Surface;
+      private readonly Surface Surface;
 
       /// <summary>
       /// Compares points using distance to endpoint.
@@ -35,7 +35,7 @@ namespace PathFinder
       /// Initializes a new instance of the Ida class.
       /// </summary>
       /// <param name="surface">Surface where to find paths</param>
-      public Ida(Bitmap surface)
+      public Ida(Surface surface)
       {
          this.Surface = surface;
       }

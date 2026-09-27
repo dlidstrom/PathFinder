@@ -18,7 +18,7 @@ namespace PathFinder
       /// <summary>
       /// Surface where paths are being located.
       /// </summary>
-      private readonly Bitmap Surface;
+      private readonly Surface Surface;
 
       /// <summary>
       /// Path end point.
@@ -34,7 +34,7 @@ namespace PathFinder
       /// Initializes a new instance of the AStarPathFinder class using the given surface.
       /// </summary>
       /// <param name="surface">Surface where to find paths</param>
-      public AStarPathFinder(Bitmap surface)
+      public AStarPathFinder(Surface surface)
       {
          this.Surface = surface;
       }

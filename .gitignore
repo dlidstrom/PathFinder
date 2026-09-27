@@ -7,5 +7,3 @@ PathFinder/obj*
 *.suo
 *.user
 *_ReSharper*
-PathFinder.Test/TestResult.xml
-PathFinder.Test/PathFinder.Test.csproj.VisualState.xml

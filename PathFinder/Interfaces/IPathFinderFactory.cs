@@ -6,7 +6,6 @@
 
 namespace PathFinder.Interfaces
 {
-   using System.Drawing;
 
    /// <summary>
    /// Defines the interface of path finder factories.
@@ -16,8 +15,8 @@ namespace PathFinder.Interfaces
       /// <summary>
       /// Creates a path finder.
       /// </summary>
-      /// <param name="bitmap">Bitmap surface (world)</param>
+      /// <param name="surface">Surface (world)</param>
       /// <returns>Path finder</returns>
-      IPathFinder CreatePathFinder(Bitmap bitmap);
+      IPathFinder CreatePathFinder(Surface surface);
    }
 }

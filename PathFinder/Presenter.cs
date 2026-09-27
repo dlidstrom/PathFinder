@@ -47,9 +47,9 @@ namespace PathFinder
       private readonly IPathFinderFactory Factory;
 
       /// <summary>
-      /// Bitmap surface.
+      /// Surface to draw on.
       /// </summary>
-      private readonly Bitmap Surface = SurfaceFactory.CreateSurface(Width, Height);
+      private readonly Surface Surface = SurfaceFactory.CreateSurface(Width, Height);
 
       /// <summary>
       /// View that the user interacts with.

@@ -16,9 +16,9 @@ namespace PathFinder
    public partial class MainForm : Form, IView
    {
       /// <summary>
-      /// Bitmap containing paths.
+      /// Surface containing paths.
       /// </summary>
-      private Bitmap? Bitmap;
+      private Surface? Surface;
 
       /// <summary>
       /// Initializes a new instance of the Mainform class.
@@ -57,12 +57,12 @@ namespace PathFinder
       }
 
       /// <summary>
-      /// Set bitmap drawing.
+      /// Set drawing surface.
       /// </summary>
-      /// <param name="bitmap">Bitmap drawing</param>
-      public void SetDrawing(Bitmap bitmap)
+      /// <param name="surface">Drawing surface</param>
+      public void SetDrawing(Surface surface)
       {
-         this.Bitmap = bitmap;
+         this.Surface = surface;
       }
 
       /// <summary>
@@ -91,11 +91,36 @@ namespace PathFinder
       /// <param name="e">Paint event arguments</param>
       private void OnPaint(object sender, PaintEventArgs e)
       {
-         // paint the bitmap
-         using (var graphics = this.CreateGraphics())
+         if (this.Surface == null)
          {
-            graphics.DrawImage(this.Bitmap, 0, 0);
+            return;
          }
+
+         // paint the surface
+         using (var graphics = this.CreateGraphics())
+         using (var bitmap = this.ToBitmap(this.Surface))
+         {
+            graphics.DrawImage(bitmap, 0, 0);
+         }
+      }
+
+      /// <summary>
+      /// Converts a surface to a bitmap.
+      /// </summary>
+      /// <param name="surface">Surface to convert</param>
+      /// <returns>Bitmap</returns>
+      private Bitmap ToBitmap(Surface surface)
+      {
+         var bitmap = new Bitmap(surface.Width, surface.Height);
+         for (int x = 0; x < surface.Width; x++)
+         {
+            for (int y = 0; y < surface.Height; y++)
+            {
+               bitmap.SetPixel(x, y, surface.GetPixel(x, y));
+            }
+         }
+
+         return bitmap;
       }
    }
 }

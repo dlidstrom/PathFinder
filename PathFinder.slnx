@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PathFinder.Test/PathFinder.Test.fsproj" />
+  <Project Path="PathFinder/PathFinder.csproj" />
+</Solution>
