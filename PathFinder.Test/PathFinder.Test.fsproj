@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="dlidstrom.Sprout" Version="0.9.30" />
+    <PackageReference Include="dlidstrom.Sprout" Version="0.9.31" />
   </ItemGroup>
 
   <ItemGroup>
